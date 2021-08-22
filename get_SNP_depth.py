@@ -4,7 +4,7 @@ with gzip.open('ht.vcf.gz', 'rt') as input_file:
     depth = {}
     for line in input_file:
         if line[0] != '#':
-            format = format + (line.split()[9:])
+            format = line.split()[9:]
             for sample in format:
                 dp = sample.split(':')[2]
                 if dp in depth.keys():
